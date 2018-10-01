@@ -19,4 +19,13 @@ public:
 	ATank2 * GetControlledTank() const;
 
 	virtual void BeginPlay() override;
+
+	virtual void Tick( float DeltaTime ) override;
+
+	//start moving barrel toward reticule;
+	void AimTowardsCrosshair();
+
+private:
+	//return an out paramter, true if hitlandscape
+	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 };
